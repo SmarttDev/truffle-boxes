@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div>
       {web3 ? (
-        <div className="text-center">
+        <section className="text-center bg-white">
           <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mb-8">
             <span className="block xl:inline">Welcome to NextJS </span>
             <span className="block text-indigo-600 xl:inline">
@@ -70,7 +70,7 @@ export default function Home() {
               Valider
             </button>
           </form>
-        </div>
+        </section>
       ) : (
         <div>Loading Web3, accounts, and contract...</div>
       )}
