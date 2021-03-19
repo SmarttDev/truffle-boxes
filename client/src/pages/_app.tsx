@@ -1,9 +1,10 @@
-import "css/index.css";
 import Head from "next/head";
+import { AppProps } from "next/app";
 import Layout from "components/layout";
 import { Web3Provider } from "context/Web3Context";
+import "css/index.css";
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <Web3Provider>
       <Layout>

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Image from "next/image";
 import Web3Context from "context/Web3Context";
 
 export default function Home() {
@@ -35,42 +36,70 @@ export default function Home() {
   return (
     <div>
       {web3 ? (
-        <section className="text-center bg-white">
-          <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mb-8">
-            <span className="block xl:inline">Welcome to NextJS </span>
-            <span className="block text-indigo-600 xl:inline">
-              with Truffle boxes
-            </span>
-          </h1>
-          <div className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
-            <p>
-              Your Truffle Box is installed and ready.
-              <br />
-              <br />
-              Below you can test the smart contract SimpleStorage.sol
-            </p>
-            <p className="mt-4">
-              If your contracts compiled and migrated successfully, try changing
-              the value stored.
-            </p>
-            <p className="mt-10">The stored value is: {storageValue}</p>
-          </div>
-          <form className="mt-6" onSubmit={submitForm}>
-            <input
-              id="storedValue"
-              type="text"
-              className="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white"
-              placeholder="Change the value"
-              required
-            />
-            <button
-              type="submit"
-              className="px-8 rounded-r-lg bg-indigo-600 text-white font-bold p-4 uppercase border-indigo-600 border-t border-b border-r"
-            >
-              Valider
-            </button>
-          </form>
-        </section>
+        <>
+          <section className="text-center bg-white">
+            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mb-8">
+              <span className="block xl:inline">Welcome to NextJS </span>
+              <span className="block text-indigo-600 xl:inline">
+                with Truffle boxes
+              </span>
+            </h1>
+            <div className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
+              <p>
+                Your Truffle Box is installed and ready.
+                <br />
+                <br />
+                Below you can test the smart contract SimpleStorage.sol
+              </p>
+              <p className="mt-4">
+                If your contracts compiled and migrated successfully, try
+                changing the value stored.
+              </p>
+              <p className="mt-10">The stored value is: {storageValue}</p>
+            </div>
+            <form className="mt-6" onSubmit={submitForm}>
+              <input
+                id="storedValue"
+                type="text"
+                className="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white"
+                placeholder="Change the value"
+                required
+              />
+              <button
+                type="submit"
+                className="px-8 rounded-r-lg bg-indigo-600 text-white font-bold p-4 uppercase border-indigo-600 border-t border-b border-r"
+              >
+                Valider
+              </button>
+            </form>
+            <div className="flex flex-wrap justify-center justify-items-auto space-x-8 mt-20">
+              <a href="">
+                <Image src="/truffle.svg" width={50} height={50} />
+              </a>
+              <a
+                title="Go to the homepage"
+                href="https://www.nextjs.org"
+                target="_blank"
+              >
+                <Image src="/nextjs.svg" width={100} height={50} />
+              </a>
+              <a
+                title="Go to the homepage"
+                href="https://www.typescriptlang.org/"
+                target="_blank"
+              >
+                <Image src="/ts-128.svg" width={50} height={50} />
+              </a>
+              <a
+                title="Go to the homepage"
+                href="https://tailwindcss.com/"
+                target="_blank"
+              >
+                <Image src="/tailwindcss.svg" width={100} height={50} />
+              </a>
+            </div>
+          </section>
+        </>
       ) : (
         <div>Loading Web3, accounts, and contract...</div>
       )}
